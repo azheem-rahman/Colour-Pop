@@ -108,64 +108,70 @@ let time = 15;
 
 const countdownElement = document.querySelector("#countdown");
 
-let refreshIntervalId = setInterval(updateCountdown, 1000);
+// user click on start button to start countdown timer
+document.querySelector("#startButton").addEventListener("click", function () {
+  let refreshIntervalId = setInterval(updateCountdown, 1000);
 
-function updateCountdown() {
-  countdownElement.innerHTML = `${time}`;
-  time--;
+  function updateCountdown() {
+    countdownElement.innerHTML = `${time}`;
+    time--;
 
-  // to stop countdown timer once it hits 0
-  if (time < 0) {
-    clearInterval(refreshIntervalId);
-  }
-
-  // after timer hits 0, user cannot click on anymore options, calculate total score
-  if (time === 0) {
-    document
-      .querySelector("#oneOption")
-      .removeEventListener("click", userAnswer);
-    document
-      .querySelector("#twoOption")
-      .removeEventListener("click", userAnswer);
-    document
-      .querySelector("#threeOption")
-      .removeEventListener("click", userAnswer);
-    document
-      .querySelector("#fourOption")
-      .removeEventListener("click", userAnswer);
-    document
-      .querySelector("#fiveOption")
-      .removeEventListener("click", userAnswer);
-    document
-      .querySelector("#sixOption")
-      .removeEventListener("click", userAnswer);
-    countScore();
-  }
-
-  // match user's answers to the given question and calculate total score
-  function countScore() {
-    let score = 0;
-
-    for (let i = 0; i < 10; i++) {
-      let arrCircles = [
-        "one",
-        "two",
-        "three",
-        "four",
-        "five",
-        "six",
-        "seven",
-        "eight",
-        "nine",
-        "ten",
-      ];
-      if (
-        document.querySelector(`#${arrCircles[i]}A`).style.backgroundColor ===
-        document.querySelector(`#${arrCircles[i]}Q`).style.backgroundColor
-      ) {
-        score++;
-      }
+    // to stop countdown timer once it hits 0
+    if (time < 0) {
+      clearInterval(refreshIntervalId);
     }
-    console.log(score);
+
+    // after timer hits 0, user cannot click on anymore options, calculate total score
+    if (time === 0) {
+      document
+        .querySelector("#oneOption")
+        .removeEventListener("click", userAnswer);
+      document
+        .querySelector("#twoOption")
+        .removeEventListener("click", userAnswer);
+      document
+        .querySelector("#threeOption")
+        .removeEventListener("click", userAnswer);
+      document
+        .querySelector("#fourOption")
+        .removeEventListener("click", userAnswer);
+      document
+        .querySelector("#fiveOption")
+        .removeEventListener("click", userAnswer);
+      document
+        .querySelector("#sixOption")
+        .removeEventListener("click", userAnswer);
+      countScore();
+    }
+
+    // match user's answers to the given question and calculate total score
+    function countScore() {
+      let score = 0;
+
+      for (let i = 0; i < 10; i++) {
+        let arrCircles = [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+          "six",
+          "seven",
+          "eight",
+          "nine",
+          "ten",
+        ];
+        if (
+          document.querySelector(`#${arrCircles[i]}A`).style.backgroundColor ===
+          document.querySelector(`#${arrCircles[i]}Q`).style.backgroundColor
+        ) {
+          score++;
+        }
+      }
+
+      const printScore = document.createElement("h3");
+      printScore.innerText = `Your score: ${score}!`;
+      document.querySelector("#score").append(printScore);
+    }
   }
-}
+});
