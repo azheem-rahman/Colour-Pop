@@ -13,21 +13,23 @@ function randomColor() {
   return arrColors[randomIndex];
 }
 
+// array to refer to for prefixes
+let arrCircles = [
+  "one",
+  "two",
+  "three",
+  "four",
+  "five",
+  "six",
+  "seven",
+  "eight",
+  "nine",
+  "ten",
+];
+
 // to generate question row of coloured circles
 function circleColor() {
   // to put in random color for question circles
-  let arrCircles = [
-    "one",
-    "two",
-    "three",
-    "four",
-    "five",
-    "six",
-    "seven",
-    "eight",
-    "nine",
-    "ten",
-  ];
   for (let item of arrCircles) {
     let indivQCircleColour = document.querySelector(`#${item}Q`);
     indivQCircleColour.style.backgroundColor = randomColor();
@@ -49,18 +51,7 @@ document.querySelector("#sixOption").addEventListener("click", userAnswer);
 // function adds in user's input and updates that changes have been made so that next user's click updates the next input
 function userAnswer(e) {
   let currentChoice = userInput.indexOf(0);
-  let arrCircles = [
-    "one",
-    "two",
-    "three",
-    "four",
-    "five",
-    "six",
-    "seven",
-    "eight",
-    "nine",
-    "ten",
-  ];
+
   if (currentChoice !== -1) {
     switch (e.target.id) {
       case "oneOption":
@@ -149,18 +140,6 @@ document.querySelector("#startButton").addEventListener("click", function () {
       let score = 0;
 
       for (let i = 0; i < 10; i++) {
-        let arrCircles = [
-          "one",
-          "two",
-          "three",
-          "four",
-          "five",
-          "six",
-          "seven",
-          "eight",
-          "nine",
-          "ten",
-        ];
         if (
           document.querySelector(`#${arrCircles[i]}A`).style.backgroundColor ===
           document.querySelector(`#${arrCircles[i]}Q`).style.backgroundColor
