@@ -104,7 +104,7 @@ function userAnswer(e) {
 }
 
 // countdown timer
-let time = 5;
+let time = 15;
 
 const countdownElement = document.querySelector("#countdown");
 
@@ -139,7 +139,33 @@ function updateCountdown() {
     document
       .querySelector("#sixOption")
       .removeEventListener("click", userAnswer);
+    countScore();
+  }
+
+  // match user's answers to the given question and calculate total score
+  function countScore() {
+    let score = 0;
+
+    for (let i = 0; i < 10; i++) {
+      let arrCircles = [
+        "one",
+        "two",
+        "three",
+        "four",
+        "five",
+        "six",
+        "seven",
+        "eight",
+        "nine",
+        "ten",
+      ];
+      if (
+        document.querySelector(`#${arrCircles[i]}A`).style.backgroundColor ===
+        document.querySelector(`#${arrCircles[i]}Q`).style.backgroundColor
+      ) {
+        score++;
+      }
+    }
+    console.log(score);
   }
 }
-
-// match user's answers to the given question and calculate total score
