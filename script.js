@@ -1,3 +1,4 @@
+// to generate a random colour
 function randomColor() {
   // red, green, blue, yellow, white, black
   let arrColors = [
@@ -12,8 +13,9 @@ function randomColor() {
   return arrColors[randomIndex];
 }
 
+// to generate question row of coloured circles
 function circleColor() {
-  // to put in random color
+  // to put in random color for question circles
   let arrCircles = [
     "one",
     "two",
@@ -27,9 +29,76 @@ function circleColor() {
     "ten",
   ];
   for (let item of arrCircles) {
-    let test = document.querySelector(`#${item}Q`);
-    test.style.backgroundColor = randomColor();
+    let indivQCircleColour = document.querySelector(`#${item}Q`);
+    indivQCircleColour.style.backgroundColor = randomColor();
   }
 }
 
 circleColor();
+
+let userInput = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+// event listeners on the colour options to take in user's choice
+document.querySelector("#oneOption").addEventListener("click", userAnswer);
+document.querySelector("#twoOption").addEventListener("click", userAnswer);
+document.querySelector("#threeOption").addEventListener("click", userAnswer);
+document.querySelector("#fourOption").addEventListener("click", userAnswer);
+document.querySelector("#fiveOption").addEventListener("click", userAnswer);
+document.querySelector("#sixOption").addEventListener("click", userAnswer);
+
+// function adds in user's input and updates that changes have been made so that next user's click updates the next input
+function userAnswer(e) {
+  let currentChoice = userInput.indexOf(0);
+  let arrCircles = [
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+    "ten",
+  ];
+  if (currentChoice !== -1) {
+    switch (e.target.id) {
+      case "oneOption":
+        document.querySelector(
+          `#${arrCircles[currentChoice]}A`
+        ).style.backgroundColor = "#ff0000";
+        userInput[currentChoice] = 1;
+        break;
+      case "twoOption":
+        document.querySelector(
+          `#${arrCircles[currentChoice]}A`
+        ).style.backgroundColor = "#008000";
+        userInput[currentChoice] = 1;
+        break;
+      case "threeOption":
+        document.querySelector(
+          `#${arrCircles[currentChoice]}A`
+        ).style.backgroundColor = "#0000FF";
+        userInput[currentChoice] = 1;
+        break;
+      case "fourOption":
+        document.querySelector(
+          `#${arrCircles[currentChoice]}A`
+        ).style.backgroundColor = "#FFFF00";
+        userInput[currentChoice] = 1;
+        break;
+      case "fiveOption":
+        document.querySelector(
+          `#${arrCircles[currentChoice]}A`
+        ).style.backgroundColor = "#FFFFFF";
+        userInput[currentChoice] = 1;
+        break;
+      case "sixOption":
+        document.querySelector(
+          `#${arrCircles[currentChoice]}A`
+        ).style.backgroundColor = "#000000";
+        userInput[currentChoice] = 1;
+        break;
+    }
+  }
+}
