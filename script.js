@@ -104,7 +104,7 @@ function userAnswer(e) {
 }
 
 // countdown timer
-let time = 60;
+let time = 5;
 
 const countdownElement = document.querySelector("#countdown");
 
@@ -118,4 +118,28 @@ function updateCountdown() {
   if (time < 0) {
     clearInterval(refreshIntervalId);
   }
+
+  // after timer hits 0, user cannot click on anymore options, calculate total score
+  if (time === 0) {
+    document
+      .querySelector("#oneOption")
+      .removeEventListener("click", userAnswer);
+    document
+      .querySelector("#twoOption")
+      .removeEventListener("click", userAnswer);
+    document
+      .querySelector("#threeOption")
+      .removeEventListener("click", userAnswer);
+    document
+      .querySelector("#fourOption")
+      .removeEventListener("click", userAnswer);
+    document
+      .querySelector("#fiveOption")
+      .removeEventListener("click", userAnswer);
+    document
+      .querySelector("#sixOption")
+      .removeEventListener("click", userAnswer);
+  }
 }
+
+// match user's answers to the given question and calculate total score
