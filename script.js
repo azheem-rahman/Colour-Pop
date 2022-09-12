@@ -102,3 +102,14 @@ function userAnswer(e) {
     }
   }
 }
+
+// countdown timer
+let time = 60;
+
+const countdownElement = document.querySelector("#countdown");
+
+setInterval(updateCountdown, 1000);
+function updateCountdown() {
+  countdownElement.innerHTML = `${time}`;
+  time--;
+}
