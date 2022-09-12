@@ -108,8 +108,14 @@ let time = 60;
 
 const countdownElement = document.querySelector("#countdown");
 
-setInterval(updateCountdown, 1000);
+let refreshIntervalId = setInterval(updateCountdown, 1000);
+
 function updateCountdown() {
   countdownElement.innerHTML = `${time}`;
   time--;
+
+  // to stop countdown timer once it hits 0
+  if (time < 0) {
+    clearInterval(refreshIntervalId);
+  }
 }
