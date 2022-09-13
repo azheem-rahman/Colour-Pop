@@ -46,9 +46,9 @@ let time = 10;
 // variable to refer to countdown timer
 const countdownElement = document.querySelector("#countdown");
 
-// question circles initally hidden
-let questionCircles = document.querySelector("#question");
-questionCircles.style.visibility = "hidden";
+// question circles and random number initally hidden
+let question = document.querySelector("#question");
+question.style.visibility = "hidden";
 
 ////////////////// user clicks on reveal button ///////////////////
 document.querySelector("#startButton").addEventListener("click", revealCircles);
@@ -58,7 +58,9 @@ function revealCircles() {
   // reveal countdown timer starts
   let revealInterval = setInterval(revealCountdown, 1000);
   // question circles becomes visible for 10s
-  questionCircles.style.visibility = "visible";
+  question.style.visibility = "visible";
+  let randomNumber = document.querySelector("#randomNumber");
+  randomNumber.innerText = Math.floor(Math.random() * 999);
 
   function revealCountdown() {
     countdownElement.innerHTML = `${time}`;
@@ -70,7 +72,7 @@ function revealCircles() {
       clearInterval(revealInterval);
 
       // question circles becomes hidden
-      questionCircles.style.visibility = "hidden";
+      question.style.visibility = "hidden";
 
       // button text change from "REVEAL!" to "START!"
       document.querySelector("#startButton").innerText = "START!";
@@ -159,7 +161,7 @@ function startGame() {
       clearInterval(gameInterval);
 
       // question circles becomes visible
-      questionCircles.style.visibility = "visible";
+      question.style.visibility = "visible";
 
       // after timer hits 0, user cannot click on anything anymore
       document
