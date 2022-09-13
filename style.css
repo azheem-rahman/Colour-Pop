@@ -11,6 +11,10 @@ body {
   display: inline-block;
 }
 
+#question {
+  display: block;
+}
+
 #oneOption {
   background-color: red;
 }

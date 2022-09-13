@@ -8,56 +8,58 @@
     <title>Colour Pop</title>
   </head>
   <body>
-    <h1>Colour Pop</h1>
-    <h2>Welcome to Color Pop!</h2>
-    <p>blahblahblah game instructions here</p>
+    <div id="gameStart">
+      <h1>Colour Pop</h1>
+      <h2>Welcome to Color Pop!</h2>
+      <p>blahblahblah game instructions here</p>
 
-    <div id="question">
-      <h3>Remember these colours!</h3>
-      <span class="circle" id="oneQ"></span>
-      <span class="circle" id="twoQ"></span>
-      <span class="circle" id="threeQ"></span>
-      <span class="circle" id="fourQ"></span>
-      <span class="circle" id="fiveQ"></span>
-      <span class="circle" id="sixQ"></span>
-      <span class="circle" id="sevenQ"></span>
-      <span class="circle" id="eightQ"></span>
-      <span class="circle" id="nineQ"></span>
-      <span class="circle" id="tenQ"></span>
+      <div id="question">
+        <h3>Remember these colours!</h3>
+        <span class="circle" id="oneQ"></span>
+        <span class="circle" id="twoQ"></span>
+        <span class="circle" id="threeQ"></span>
+        <span class="circle" id="fourQ"></span>
+        <span class="circle" id="fiveQ"></span>
+        <span class="circle" id="sixQ"></span>
+        <span class="circle" id="sevenQ"></span>
+        <span class="circle" id="eightQ"></span>
+        <span class="circle" id="nineQ"></span>
+        <span class="circle" id="tenQ"></span>
+      </div>
+
+      <div id="timer">
+        <h3 id="countdown">10</h3>
+      </div>
+
+      <button id="startButton">REVEAL!</button>
+
+      <div id="score"></div>
+
+      <div id="userInput">
+        <h3>Your Answers</h3>
+        <span class="circle" id="oneA"></span>
+        <span class="circle" id="twoA"></span>
+        <span class="circle" id="threeA"></span>
+        <span class="circle" id="fourA"></span>
+        <span class="circle" id="fiveA"></span>
+        <span class="circle" id="sixA"></span>
+        <span class="circle" id="sevenA"></span>
+        <span class="circle" id="eightA"></span>
+        <span class="circle" id="nineA"></span>
+        <span class="circle" id="tenA"></span>
+      </div>
+
+      <div id="colorPalette">
+        <h3>Click your option below!</h3>
+        <span class="circle" id="oneOption"></span>
+        <span class="circle" id="twoOption"></span>
+        <span class="circle" id="threeOption"></span>
+        <span class="circle" id="fourOption"></span>
+        <span class="circle" id="fiveOption"></span>
+        <span class="circle" id="sixOption"></span>
+      </div>
     </div>
-
-    <div id="timer">
-      <h3 id="countdown">10</h3>
-    </div>
-
-    <button id="startButton">START!</button>
-
-    <div id="score"></div>
-
-    <div id="userInput">
-      <h3>Your Answers</h3>
-      <span class="circle" id="oneA"></span>
-      <span class="circle" id="twoA"></span>
-      <span class="circle" id="threeA"></span>
-      <span class="circle" id="fourA"></span>
-      <span class="circle" id="fiveA"></span>
-      <span class="circle" id="sixA"></span>
-      <span class="circle" id="sevenA"></span>
-      <span class="circle" id="eightA"></span>
-      <span class="circle" id="nineA"></span>
-      <span class="circle" id="tenA"></span>
-    </div>
-
-    <div id="colorPalette">
-      <h3>Click your option below!</h3>
-      <span class="circle" id="oneOption"></span>
-      <span class="circle" id="twoOption"></span>
-      <span class="circle" id="threeOption"></span>
-      <span class="circle" id="fourOption"></span>
-      <span class="circle" id="fiveOption"></span>
-      <span class="circle" id="sixOption"></span>
-    </div>
-
+    <div id="gameOver"></div>
     <script src="/script.js"></script>
   </body>
 </html>
