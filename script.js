@@ -95,7 +95,7 @@ function userAnswer(e) {
 }
 
 // countdown timer
-let time = 15;
+let time = 10;
 
 const countdownElement = document.querySelector("#countdown");
 
@@ -112,8 +112,8 @@ document.querySelector("#startButton").addEventListener("click", function () {
       clearInterval(refreshIntervalId);
     }
 
-    // after timer hits 0, user cannot click on anymore options, calculate total score
-    if (time === 0) {
+    // after timer hits 0, user cannot click on anything anymore, calculate total score
+    if (time < 0) {
       document
         .querySelector("#oneOption")
         .removeEventListener("click", userAnswer);
