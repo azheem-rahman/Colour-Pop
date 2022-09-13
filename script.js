@@ -32,6 +32,7 @@ function circleColor() {
   for (let item of arrCircles) {
     let indivQCircleColour = document.querySelector(`#${item}Q`);
     indivQCircleColour.style.backgroundColor = randomColor();
+    indivQCircleColour.innerText = Math.floor(Math.random() * 999);
   }
 }
 
@@ -51,16 +52,19 @@ let question = document.querySelector("#question");
 question.style.visibility = "hidden";
 
 ////////////////// user clicks on reveal button ///////////////////
-document.querySelector("#startButton").addEventListener("click", revealCircles);
+document
+  .querySelector("#startButton")
+  .addEventListener("click", revealQuestion);
 
-// revealCircles function runs when user clicks 'REVEAL!'
-function revealCircles() {
+// revealQuestion function runs when user clicks 'REVEAL!'
+function revealQuestion() {
   // reveal countdown timer starts
   let revealInterval = setInterval(revealCountdown, 1000);
-  // question circles becomes visible for 10s
+  // question becomes visible for 10s
   question.style.visibility = "visible";
   let randomNumber = document.querySelector("#randomNumber");
-  randomNumber.innerText = Math.floor(Math.random() * 999);
+  let currentRandomNumber = Math.floor(Math.random() * 999);
+  randomNumber.innerText = currentRandomNumber;
 
   function revealCountdown() {
     countdownElement.innerHTML = `${time}`;
@@ -71,7 +75,7 @@ function revealCircles() {
       // to stop countdown timer once it hits 0
       clearInterval(revealInterval);
 
-      // question circles becomes hidden
+      // question becomes hidden
       question.style.visibility = "hidden";
 
       // button text change from "REVEAL!" to "START!"
@@ -81,7 +85,7 @@ function revealCircles() {
   // remove event listener from button to prepare for next event listener
   document
     .querySelector("#startButton")
-    .removeEventListener("click", revealCircles);
+    .removeEventListener("click", revealQuestion);
 
   // add event listener to button for user to start game
   document.querySelector("#startButton").addEventListener("click", startGame);
