@@ -54,11 +54,22 @@ body {
   border-radius: 20px;
 }
 
-#contentMiddleBottom {
-  padding: 5px;
-  border-color: black;
-  border-style: solid;
-  border-radius: 20px;
+/* taken from: https://codepen.io/DanielWeiner/pen/naybVd?editors=1100 */
+#startButton {
+  background-color: black;
+  font-size: 30px;
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+  display: inline-block;
+  margin: 5px;
+  font-weight: bold;
+  padding: 10px 0 10px 10px;
+  background-color: lightgray;
+  text-shadow: -1px -1px black, 1px 1px white;
+  color: gray;
+  border-radius: 7px;
+  box-shadow: 0 0.2em gray;
+  cursor: pointer;
 }
 
 #oneOption {
