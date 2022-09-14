@@ -215,6 +215,8 @@ function startGame() {
       document
         .querySelector("#startButton")
         .removeEventListener("click", startGame);
+
+      numInput.removeEventListener("keyup", userPressEnterNum);
     }
 
     // match user's answers to the given question, calculate, and display total score
@@ -228,10 +230,16 @@ function startGame() {
         ) {
           score++;
         }
+        if (
+          document.querySelector(`#${arrCircles[i]}A`).innerText ===
+          document.querySelector(`#${arrCircles[i]}Q`).innerText
+        ) {
+          score++;
+        }
       }
 
       const printScore = document.createElement("h3");
-      printScore.innerText = `Your score: ${score}!`;
+      printScore.innerText = `Your score: ${score}/20!`;
       document.querySelector("#score").append(printScore);
     }
   }
