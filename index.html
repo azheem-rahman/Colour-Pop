@@ -15,7 +15,6 @@
 
       <div id="question">
         <h3>Remember them!</h3>
-        <h3 id="randomNumber"></h3>
         <span class="circle" id="oneQ"></span>
         <span class="circle" id="twoQ"></span>
         <span class="circle" id="threeQ"></span>
@@ -29,7 +28,7 @@
       </div>
 
       <div id="timer">
-        <h3 id="countdown">10</h3>
+        <h3 id="countdown">30</h3>
       </div>
 
       <button id="startButton">REVEAL!</button>
@@ -38,7 +37,6 @@
 
       <div id="answers">
         <h3>Your Answers</h3>
-        <h3 id="numAnswer"></h3>
         <span class="circle" id="oneA"></span>
         <span class="circle" id="twoA"></span>
         <span class="circle" id="threeA"></span>
@@ -53,21 +51,23 @@
 
       <div id="colorPalette">
         <h3>Choose your option and enter your number below!</h3>
-        <input
-          type="number"
-          id="userNumInput"
-          placeholder="0"
-          min="0"
-          max="999"
-        />
-        <br />
-        <br />
         <span class="circle" id="oneOption"></span>
         <span class="circle" id="twoOption"></span>
         <span class="circle" id="threeOption"></span>
         <span class="circle" id="fourOption"></span>
         <span class="circle" id="fiveOption"></span>
         <span class="circle" id="sixOption"></span>
+        <br />
+        <br />
+        <span>Type your number and press enter:</span>
+        <input
+          type="number"
+          id="userNumInput"
+          min="0"
+          placeholder="0"
+          max="999"
+          maxlength="3"
+        />
       </div>
     </div>
     <div id="gameOver"></div>

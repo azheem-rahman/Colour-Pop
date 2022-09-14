@@ -1,6 +1,6 @@
 // function generates a random colour from amongst:
 // red, green, blue, yellow, white, black
-function randomColor() {
+function generateRandomColor() {
   let arrColors = [
     "#ff0000",
     "#008000",
@@ -11,6 +11,11 @@ function randomColor() {
   ];
   let randomIndex = Math.floor(Math.random() * 6);
   return arrColors[randomIndex];
+}
+
+// function generates random number 0-999
+function generateRandomNumber() {
+  return Math.floor(Math.random() * 999);
 }
 
 // array to refer to for prefixes
@@ -27,31 +32,34 @@ let arrCircles = [
   "ten",
 ];
 
-// function generates question circles, each given a random colour
+// function generates question circles, each given a random colour and number
 function circleColor() {
   for (let item of arrCircles) {
     let indivQCircleColour = document.querySelector(`#${item}Q`);
-    indivQCircleColour.style.backgroundColor = randomColor();
-    indivQCircleColour.innerText = Math.floor(Math.random() * 999);
+    indivQCircleColour.style.backgroundColor = generateRandomColor();
+    indivQCircleColour.innerText = generateRandomNumber();
   }
 }
 
 circleColor();
 
-// array to track which answer circles has been filled with user's input
-let userInput = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+// array to track which answer circles' colour has been filled with user's input
+let userInputColour = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+// array to track which answer circles' number has been filled with user's input
+let userInputNumber = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 // countdown timer initally set to 10s
-let time = 10;
+let time = 30;
 
 // variable to refer to countdown timer
 const countdownElement = document.querySelector("#countdown");
 
-// question circles and random number initally hidden
+// question circles initally hidden
 let question = document.querySelector("#question");
 question.style.visibility = "hidden";
 
-////////////////// user clicks on reveal button ///////////////////
+////////////////// user clicks on REVEAL button ///////////////////
 document
   .querySelector("#startButton")
   .addEventListener("click", revealQuestion);
@@ -62,9 +70,6 @@ function revealQuestion() {
   let revealInterval = setInterval(revealCountdown, 1000);
   // question becomes visible for 10s
   question.style.visibility = "visible";
-  let randomNumber = document.querySelector("#randomNumber");
-  let currentRandomNumber = Math.floor(Math.random() * 999);
-  randomNumber.innerText = currentRandomNumber;
 
   function revealCountdown() {
     countdownElement.innerHTML = `${time}`;
@@ -91,10 +96,12 @@ function revealQuestion() {
   document.querySelector("#startButton").addEventListener("click", startGame);
 }
 
+////////////////// user clicks on START button ///////////////////
+
 // startGame function runs when user clicks 'START!'
 function startGame() {
-  // reset countdown timer to 15s
-  time = 15;
+  // reset countdown timer to 30s
+  time = 30;
   // game countdown timer starts
   let gameInterval = setInterval(gameCountdown, 1000);
 
@@ -107,49 +114,66 @@ function startGame() {
   document.querySelector("#fiveOption").addEventListener("click", userAnswer);
   document.querySelector("#sixOption").addEventListener("click", userAnswer);
 
+  // user can start typing and press enter for answer circles to take in number
+  let numInput = document.querySelector("#userNumInput");
+  numInput.addEventListener("keyup", userPressEnterNum);
+  function userPressEnterNum(e) {
+    e.preventDefault();
+    if (e.code === "Enter") {
+      let currentNumberChoice = userInputNumber.indexOf(0);
+
+      if (currentNumberChoice !== -1) {
+        document.querySelector(
+          `#${arrCircles[currentNumberChoice]}A`
+        ).innerText = numInput.value;
+        userInputNumber[currentNumberChoice] = 1;
+      }
+    }
+  }
+
   // when timer starts:
   // function adds in user's input
   // function updates tracking array so that next user's click updates the next answer circle
   function userAnswer(e) {
-    let currentChoice = userInput.indexOf(0);
+    let currentColourChoice = userInputColour.indexOf(0);
 
-    if (currentChoice !== -1) {
+    if (currentColourChoice !== -1) {
       switch (e.target.id) {
         case "oneOption":
           document.querySelector(
-            `#${arrCircles[currentChoice]}A`
+            `#${arrCircles[currentColourChoice]}A`
           ).style.backgroundColor = "#ff0000";
-          userInput[currentChoice] = 1;
+          userInputColour[currentColourChoice] = 1;
           break;
         case "twoOption":
           document.querySelector(
-            `#${arrCircles[currentChoice]}A`
+            `#${arrCircles[currentColourChoice]}A`
           ).style.backgroundColor = "#008000";
-          userInput[currentChoice] = 1;
+          userInputColour[currentColourChoice] = 1;
           break;
         case "threeOption":
           document.querySelector(
-            `#${arrCircles[currentChoice]}A`
+            `#${arrCircles[currentColourChoice]}A`
           ).style.backgroundColor = "#0000FF";
-          userInput[currentChoice] = 1;
+          userInputColour[currentColourChoice] = 1;
           break;
         case "fourOption":
           document.querySelector(
-            `#${arrCircles[currentChoice]}A`
+            `#${arrCircles[currentColourChoice]}A`
           ).style.backgroundColor = "#FFFF00";
-          userInput[currentChoice] = 1;
+          userInputColour[currentColourChoice] = 1;
           break;
         case "fiveOption":
           document.querySelector(
-            `#${arrCircles[currentChoice]}A`
+            `#${arrCircles[currentColourChoice]}A`
           ).style.backgroundColor = "#FFFFFF";
-          userInput[currentChoice] = 1;
+          userInputColour[currentColourChoice] = 1;
           break;
         case "sixOption":
           document.querySelector(
-            `#${arrCircles[currentChoice]}A`
+            `#${arrCircles[currentColourChoice]}A`
           ).style.backgroundColor = "#000000";
-          userInput[currentChoice] = 1;
+          userInputColour[currentColourChoice] = 1;
           break;
       }
     }
