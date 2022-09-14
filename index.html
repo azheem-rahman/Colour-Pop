@@ -4,80 +4,89 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Yatra+One&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/style.css" />
     <title>Colour Pop</title>
   </head>
   <body>
     <div id="gameStart">
-      <h1>Colour Pop</h1>
-      <header>
-        <h2>Welcome to Color Pop!</h2>
-        <p>blahblahblah game instructions here</p>
-      </header>
-
-      <div id="question">
-        <h3>Remember them!</h3>
-        <span class="circle" id="oneQ"></span>
-        <span class="circle" id="twoQ"></span>
-        <span class="circle" id="threeQ"></span>
-        <span class="circle" id="fourQ"></span>
-        <span class="circle" id="fiveQ"></span>
-        <span class="circle" id="sixQ"></span>
-        <span class="circle" id="sevenQ"></span>
-        <span class="circle" id="eightQ"></span>
-        <span class="circle" id="nineQ"></span>
-        <span class="circle" id="tenQ"></span>
+      <div id="contentMiddleTop">
+        <h1>Colour Pop</h1>
+        <header>
+          <h2>Welcome to Color Pop!</h2>
+          <p>
+            You have 30s to remember the colours and numbers that appear <br />
+            and another 30s to send in your answer!
+          </p>
+        </header>
       </div>
 
-      <div id="timer">
-        <h3 id="countdown">30</h3>
-      </div>
+      <div id="contentMiddleUpper">
+        <div id="question">
+          <h3>Remember them!</h3>
+          <span class="circle" id="oneQ"></span>
+          <span class="circle" id="twoQ"></span>
+          <span class="circle" id="threeQ"></span>
+          <span class="circle" id="fourQ"></span>
+          <span class="circle" id="fiveQ"></span>
+          <span class="circle" id="sixQ"></span>
+          <span class="circle" id="sevenQ"></span>
+          <span class="circle" id="eightQ"></span>
+          <span class="circle" id="nineQ"></span>
+          <span class="circle" id="tenQ"></span>
+        </div>
 
-      <button id="startButton">REVEAL!</button>
-      <br />
+        <div id="timer">
+          <h3 id="countdown">30</h3>
+        </div>
 
-      <div id="score"></div>
-      <br />
-
-      <div id="answers">
-        <h3>Your Answers</h3>
-        <span class="circle" id="oneA"></span>
-        <span class="circle" id="twoA"></span>
-        <span class="circle" id="threeA"></span>
-        <span class="circle" id="fourA"></span>
-        <span class="circle" id="fiveA"></span>
-        <span class="circle" id="sixA"></span>
-        <span class="circle" id="sevenA"></span>
-        <span class="circle" id="eightA"></span>
-        <span class="circle" id="nineA"></span>
-        <span class="circle" id="tenA"></span>
-      </div>
-      <br />
-
-      <div id="colorPalette">
-        <h3>Choose your option and enter your number below!</h3>
-        <span class="circle" id="oneOption"></span>
-        <span class="circle" id="twoOption"></span>
-        <span class="circle" id="threeOption"></span>
-        <span class="circle" id="fourOption"></span>
-        <span class="circle" id="fiveOption"></span>
-        <span class="circle" id="sixOption"></span>
+        <button id="startButton">REVEAL!</button>
         <br />
-        <span>Type your number and press enter:</span>
-        <input
-          type="number"
-          id="userNumInput"
-          min="0"
-          placeholder="0"
-          max="999"
-          maxlength="3"
-        />
+
+        <div id="score"></div>
+        <br />
+      </div>
+
+      <div id="contentMiddleLower">
+        <div id="answers">
+          <h3>Your Answers</h3>
+          <span class="circle" id="oneA">-</span>
+          <span class="circle" id="twoA">-</span>
+          <span class="circle" id="threeA">-</span>
+          <span class="circle" id="fourA">-</span>
+          <span class="circle" id="fiveA">-</span>
+          <span class="circle" id="sixA">-</span>
+          <span class="circle" id="sevenA">-</span>
+          <span class="circle" id="eightA">-</span>
+          <span class="circle" id="nineA">-</span>
+          <span class="circle" id="tenA">-</span>
+        </div>
+        <br />
+
+        <div id="colorPalette">
+          <h3>Choose your option and enter your number below!</h3>
+          <span class="circle" id="oneOption"></span>
+          <span class="circle" id="twoOption"></span>
+          <span class="circle" id="threeOption"></span>
+          <span class="circle" id="fourOption"></span>
+          <span class="circle" id="fiveOption"></span>
+          <span class="circle" id="sixOption"></span>
+          <br />
+          <span>Type your number and press enter:</span>
+          <input
+            type="number"
+            id="userNumInput"
+            min="0"
+            placeholder="0"
+            max="999"
+            maxlength="3"
+          />
+        </div>
       </div>
     </div>
     <div id="gameOver"></div>

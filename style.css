@@ -4,8 +4,14 @@ h1 {
   background-color: #cc4b09;
   outline: black;
   padding: 20px;
-  border: #000000;
-  border-radius: 1px;
+  border-style: dotted;
+  border-radius: 20px;
+}
+
+header {
+  border-color: black;
+  border-style: solid;
+  border-radius: 20px;
 }
 
 body {
@@ -30,8 +36,29 @@ body {
   color: #000000;
 }
 
+#contentMiddleUpper {
+  margin: 10px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 20px;
+}
+
 #question {
   display: block;
+}
+
+#contentMiddleLower {
+  padding: 10px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 20px;
+}
+
+#contentMiddleBottom {
+  padding: 5px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 20px;
 }
 
 #oneOption {
