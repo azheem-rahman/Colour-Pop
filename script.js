@@ -2,12 +2,12 @@
 // red, green, blue, yellow, white, black
 function generateRandomColor() {
   let arrColors = [
-    "#ff0000",
-    "#008000",
-    "#0000FF",
-    "#FFFF00",
-    "#FFFFFF",
-    "#000000",
+    "#ff6060",
+    "#fabed4",
+    "#d3d3d3",
+    "#cc9e48",
+    "#aaffc3",
+    "#ffd580",
   ];
   let randomIndex = Math.floor(Math.random() * 6);
   return arrColors[randomIndex];
@@ -148,37 +148,37 @@ function startGame() {
         case "oneOption":
           document.querySelector(
             `#${arrCircles[currentColourChoice]}A`
-          ).style.backgroundColor = "#ff0000";
+          ).style.backgroundColor = "#ff6060";
           userInputColour[currentColourChoice] = 1;
           break;
         case "twoOption":
           document.querySelector(
             `#${arrCircles[currentColourChoice]}A`
-          ).style.backgroundColor = "#008000";
+          ).style.backgroundColor = "#fabed4";
           userInputColour[currentColourChoice] = 1;
           break;
         case "threeOption":
           document.querySelector(
             `#${arrCircles[currentColourChoice]}A`
-          ).style.backgroundColor = "#0000FF";
+          ).style.backgroundColor = "#d3d3d3";
           userInputColour[currentColourChoice] = 1;
           break;
         case "fourOption":
           document.querySelector(
             `#${arrCircles[currentColourChoice]}A`
-          ).style.backgroundColor = "#FFFF00";
+          ).style.backgroundColor = "#cc9e48";
           userInputColour[currentColourChoice] = 1;
           break;
         case "fiveOption":
           document.querySelector(
             `#${arrCircles[currentColourChoice]}A`
-          ).style.backgroundColor = "#FFFFFF";
+          ).style.backgroundColor = "#aaffc3";
           userInputColour[currentColourChoice] = 1;
           break;
         case "sixOption":
           document.querySelector(
             `#${arrCircles[currentColourChoice]}A`
-          ).style.backgroundColor = "#000000";
+          ).style.backgroundColor = "#ffd580";
           userInputColour[currentColourChoice] = 1;
           break;
       }

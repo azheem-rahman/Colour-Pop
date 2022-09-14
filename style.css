@@ -1,16 +1,33 @@
+h1 {
+  font-family: "Press Start 2P", cursive;
+  color: #ffbaaa;
+  background-color: #cc4b09;
+  outline: black;
+  padding: 20px;
+  border: #000000;
+  border-radius: 1px;
+}
+
 body {
-  background-color: #fad9c1;
+  background-color: #5d94fb;
+  color: white;
+  /* color: #dbfcff; */
   text-align: center;
+  /* font-family: "Kanit", sans-serif; */
+  font-family: "Yatra One", cursive;
+  /* font-style: italic; */
+  font-size: 20px;
 }
 
 .circle {
-  height: 30px;
-  width: 30px;
-  background-color: #bbb;
+  height: 40px;
+  width: 40px;
+  background-color: #000000;
   border-radius: 50%;
   display: inline-block;
   text-align: center; /* text-align to centralise text horizontally */
-  line-height: 30px; /* line height to centralise text vertically */
+  line-height: 40px; /* line height to centralise text vertically */
+  color: #000000;
 }
 
 #question {
@@ -18,25 +35,25 @@ body {
 }
 
 #oneOption {
-  background-color: red;
+  background-color: #ff6060;
 }
 
 #twoOption {
-  background-color: green;
+  background-color: #fabed4;
 }
 
 #threeOption {
-  background-color: blue;
+  background-color: #d3d3d3;
 }
 
 #fourOption {
-  background-color: yellow;
+  background-color: #cc9e48;
 }
 
 #fiveOption {
-  background-color: white;
+  background-color: #aaffc3;
 }
 
 #sixOption {
-  background-color: black;
+  background-color: #ffd580;
 }
