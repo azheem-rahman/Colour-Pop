@@ -119,15 +119,21 @@ function startGame() {
   numInput.addEventListener("keyup", userPressEnterNum);
   function userPressEnterNum(e) {
     e.preventDefault();
+    // user types in number > press Enter > take in input
     if (e.code === "Enter") {
       let currentNumberChoice = userInputNumber.indexOf(0);
-
+      // find the answer circles which have not been updated with user's number
       if (currentNumberChoice !== -1) {
+        // add in text in answer circle with user's number
         document.querySelector(
           `#${arrCircles[currentNumberChoice]}A`
         ).innerText = numInput.value;
+        // update array tracking which answer circles have been updated with user's number
         userInputNumber[currentNumberChoice] = 1;
       }
+
+      // clear input field after user press Enter
+      numInput.value = "";
     }
   }
 
