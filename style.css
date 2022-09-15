@@ -3,8 +3,8 @@ h1 {
   color: #ffbaaa;
   background-color: #cc4b09;
   outline: black;
-  padding: 10px;
-  border-style: dashed;
+  padding: 20px;
+  border-style: dotted;
   border-radius: 20px;
 }
 
@@ -12,7 +12,6 @@ header {
   border-color: black;
   border-style: solid;
   border-radius: 20px;
-  margin: 5px;
 }
 
 body {
@@ -38,7 +37,7 @@ body {
 }
 
 #contentMiddleUpper {
-  margin: 5px;
+  margin: 10px;
   border-color: black;
   border-style: solid;
   border-radius: 20px;
@@ -49,8 +48,7 @@ body {
 }
 
 #contentMiddleLower {
-  margin: 5px;
-  padding-bottom: 5px;
+  padding: 10px;
   border-color: black;
   border-style: solid;
   border-radius: 20px;

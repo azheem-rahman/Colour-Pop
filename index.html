@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,9 +16,9 @@
   <body>
     <div id="gameStart">
       <div id="contentMiddleTop">
-        <h1>Colour-Pop</h1>
+        <h1>Colour Pop</h1>
         <header>
-          <h2>Welcome!</h2>
+          <h2>Welcome to Color Pop!</h2>
           <p>
             You have 30s to remember the colours and numbers that appear <br />
             and another 30s to send in your answer!
@@ -54,7 +54,7 @@
 
       <div id="contentMiddleLower">
         <div id="answers">
-          <h4>Your Answers</h4>
+          <h3>Your Answers</h3>
           <span class="circle" id="oneA">-</span>
           <span class="circle" id="twoA">-</span>
           <span class="circle" id="threeA">-</span>
@@ -69,7 +69,7 @@
         <br />
 
         <div id="colorPalette">
-          <h4>Choose your answer below!</h4>
+          <h3>Choose your option and enter your number below!</h3>
           <span class="circle" id="oneOption"></span>
           <span class="circle" id="twoOption"></span>
           <span class="circle" id="threeOption"></span>
@@ -79,16 +79,17 @@
           <br />
           <span>Type your number and press enter:</span>
           <input
-            type="string"
+            type="number"
             id="userNumInput"
+            min="0"
             placeholder="0"
+            max="999"
             maxlength="3"
-            size="3"
           />
         </div>
       </div>
     </div>
     <div id="gameOver"></div>
-    <script src="./script.js"></script>
+    <script src="/script.js"></script>
   </body>
 </html>
