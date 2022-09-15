@@ -250,3 +250,26 @@ function startGame() {
     }
   }
 }
+
+///////// drag and drop ////////
+
+function onDragStart(event) {
+  event.dataTransfer.setData("text/plain", event.target.id);
+}
+
+function onDragOver(event) {
+  event.preventDefault();
+}
+
+function onDrop(event) {
+  const id = event.dataTransfer.getData("text");
+
+  const dropzone = event.target;
+  console.log(dropzone);
+  switch (id) {
+    case "oneOption":
+      dropzone.style.backgroundColor = "#ff6060";
+  }
+
+  event.dataTransfer.clearData();
+}
