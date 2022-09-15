@@ -127,7 +127,7 @@ function startGame() {
         // add in text in answer circle with user's number
         document.querySelector(
           `#${arrCircles[currentNumberChoice]}A`
-        ).innerText = numInput.value;
+        ).innerText = parseInt(numInput.value);
         // update array tracking which answer circles have been updated with user's number
         userInputNumber[currentNumberChoice] = 1;
       }
