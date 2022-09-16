@@ -183,70 +183,71 @@ function startGame() {
   //         break;
   //     }
   //   }
-}
 
-function gameCountdown() {
-  countdownElement.innerHTML = `${time}`;
-  time--;
+  function gameCountdown() {
+    countdownElement.innerHTML = `${time}`;
+    time--;
 
-  // when countdown timer hits 0:
-  if (time < 0) {
-    // stop countdown timer
-    clearInterval(gameInterval);
+    // when countdown timer hits 0:
+    if (time < 0) {
+      // stop countdown timer
+      clearInterval(gameInterval);
 
-    // question circles becomes visible
-    question.style.visibility = "visible";
+      // question circles becomes visible
+      question.style.visibility = "visible";
 
-    //   // after timer hits 0, user cannot click on anything anymore
-    //   document
-    //     .querySelector("#oneOption")
-    //     .removeEventListener("click", userAnswer);
-    //   document
-    //     .querySelector("#twoOption")
-    //     .removeEventListener("click", userAnswer);
-    //   document
-    //     .querySelector("#threeOption")
-    //     .removeEventListener("click", userAnswer);
-    //   document
-    //     .querySelector("#fourOption")
-    //     .removeEventListener("click", userAnswer);
-    //   document
-    //     .querySelector("#fiveOption")
-    //     .removeEventListener("click", userAnswer);
-    //   document
-    //     .querySelector("#sixOption")
-    //     .removeEventListener("click", userAnswer);
-    //   countScore();
+      //   // after timer hits 0, user cannot click on anything anymore
+      //   document
+      //     .querySelector("#oneOption")
+      //     .removeEventListener("click", userAnswer);
+      //   document
+      //     .querySelector("#twoOption")
+      //     .removeEventListener("click", userAnswer);
+      //   document
+      //     .querySelector("#threeOption")
+      //     .removeEventListener("click", userAnswer);
+      //   document
+      //     .querySelector("#fourOption")
+      //     .removeEventListener("click", userAnswer);
+      //   document
+      //     .querySelector("#fiveOption")
+      //     .removeEventListener("click", userAnswer);
+      //   document
+      //     .querySelector("#sixOption")
+      //     .removeEventListener("click", userAnswer);
 
-    //   document
-    //     .querySelector("#startButton")
-    //     .removeEventListener("click", startGame);
+      countScore();
 
-    //   numInput.removeEventListener("keyup", userPressEnterNum);
-  }
+      document
+        .querySelector("#startButton")
+        .removeEventListener("click", startGame);
 
-  // match user's answers to the given question, calculate, and display total score
-  function countScore() {
-    let score = 0;
-
-    for (let i = 0; i < 10; i++) {
-      if (
-        document.querySelector(`#${arrCircles[i]}A`).style.backgroundColor ===
-        document.querySelector(`#${arrCircles[i]}Q`).style.backgroundColor
-      ) {
-        score++;
-      }
-      if (
-        document.querySelector(`#${arrCircles[i]}A`).innerText ===
-        document.querySelector(`#${arrCircles[i]}Q`).innerText
-      ) {
-        score++;
-      }
+      numInput.removeEventListener("keyup", userPressEnterNum);
     }
 
-    const printScore = document.createElement("h3");
-    printScore.innerText = `Your score: ${score}/20!`;
-    document.querySelector("#score").append(printScore);
+    // match user's answers to the given question, calculate, and display total score
+    function countScore() {
+      let score = 0;
+
+      for (let i = 0; i < 10; i++) {
+        if (
+          document.querySelector(`#${arrCircles[i]}A`).style.backgroundColor ===
+          document.querySelector(`#${arrCircles[i]}Q`).style.backgroundColor
+        ) {
+          score++;
+        }
+        if (
+          document.querySelector(`#${arrCircles[i]}A`).innerText ===
+          document.querySelector(`#${arrCircles[i]}Q`).innerText
+        ) {
+          score++;
+        }
+      }
+
+      const printScore = document.createElement("h3");
+      printScore.innerText = `Your score: ${score}/20!`;
+      document.querySelector("#score").append(printScore);
+    }
   }
 }
 
