@@ -1,5 +1,8 @@
+//=======================================================
+//============= Initialisation Stage ====================
+//=======================================================
+
 // function generates a random colour from amongst:
-// red, green, blue, yellow, white, black
 function generateRandomColor() {
   let arrColors = [
     "#ff6060",
@@ -59,7 +62,10 @@ const countdownElement = document.querySelector("#countdown");
 let question = document.querySelector("#question");
 question.style.visibility = "hidden";
 
-////////////////// user clicks on REVEAL button ///////////////////
+//=======================================================
+//==================== Reveal Stage =====================
+//=======================================================
+
 document
   .querySelector("#startButton")
   .addEventListener("click", revealQuestion);
@@ -96,7 +102,9 @@ function revealQuestion() {
   document.querySelector("#startButton").addEventListener("click", startGame);
 }
 
-////////////////// user clicks on START button ///////////////////
+//=======================================================
+//================== Start Game Stage ===================
+//=======================================================
 
 // startGame function runs when user clicks 'START!'
 function startGame() {
@@ -251,7 +259,9 @@ function startGame() {
   }
 }
 
-/////////////////////////// drag and drop portion ///////////////////////////
+//=======================================================
+//=============== Drag and Drop Feature =================
+//=======================================================
 
 function onDragStart(event) {
   // .dataTransfer objects's .setData to save ID of dragged element
