@@ -1,7 +1,7 @@
 # Colour-Pop
 General Assembly Software Engineering Immersive Batch 39 Individual Project 1 using HTML, CSS, JavaScript
 
-Deployed on GitHub Pages: 
+Deployed on GitHub Pages: https://azheem-rahman.github.io/Colour-Pop/
 
 ## Branches
 ### Main
